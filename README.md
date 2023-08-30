@@ -1,13 +1,13 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/enzodpaiva/Masterer)
 # Masterer 
 
-Trabalho FACOM - Este projeto foi entregue como trabalho de duas disciplinas, sendo elas e seu integrantes:
+FACOM Project - This project was submitted as a assignment for two courses, and their members are:
 
-- Integrantes trabalho programação para web: Enzo Paiva, Arthur Ramires, Gabriel Cardoso e Nicole Fernanda.
+- Web Programming Project Team Members: Enzo Paiva, Arthur Ramires, Gabriel Cardoso, and Nicole Fernanda.
 
-- Integrantes trabalho computação distribuida: Enzo Paiva, Arthur Ramires, Milena Alegre e Vitoria Rocha.
+- Distributed Computing Project Team Members: Enzo Paiva, Arthur Ramires, Milena Alegre, and Vitoria Rocha.
 
-## Projeto feito com as tecnologias:
+## Made with:
 - PHP 7.4 (FrameWork Laravel 8.83)
 - Mysql 8
 - HTML
@@ -15,11 +15,12 @@ Trabalho FACOM - Este projeto foi entregue como trabalho de duas disciplinas, se
 - JavaScript
 - Docker
 
-### Iniciar projeto
-Este projeto se encontra em uma instancia docker para facilitar sua usabildiade. Para rodar o projeto localmente com docker. 
+### Starting the Project
+This project is set up in a Docker instance to facilitate its usability. To run the project locally using Docker.
 
-### Instalando Docker
-A instalação do docker pode ser feita através desses links, de acordo com o seu sistema operacional:
+### Installing Docker
+You can install Docker through these links, according to your operating system:
+
 ##### windows
 ```
 https://docs.docker.com/desktop/windows/install/
@@ -30,29 +31,30 @@ https://docs.docker.com/desktop/windows/install/
 https://docs.docker.com/engine/install/ubuntu/
 ```
 
-Execute os comandos abaixo no terminal dentro da pasta do projeto:
+Execute the commands below in the terminal within the project folder:
 
-Inicializar os containers (Também realiza o download na primeira vez que executado)
+Initialize the containers (This also downloads them the first time it's executed).
 ```sh
 docker-compose up -d
 ```
 
-listar os containers
+list containers
 ```sh
 docker ps -a
 ```
 
-entrar nos containers da aplicação
+Enter the application's containers.
 ```sh
 docker exec -it {nome container} sh
 ```
 
-inicializar a aplicação -- dentro do container Masterer-app rodar:
+To start the application - inside the "Masterer-app" container, run:
 ```sh
 php artisan serve
 ```
 
-### Configuração local do banco de dados
+### Local database configuration.
+
 ```
 ServerHost: localhost
 Port: 33007
@@ -60,13 +62,14 @@ Username: root
 Password: root
 ```
 
-##### Caso de problema de conexao verificar se os seguintes drivers estão habilitados:
+##### In case of connection issues, please verify if the following drivers are enabled:
+
 ```
 rewriteBatchedStatements: true
 useSSL: false
 ```
 
-#### Link dos containers utilizados nesse projeoto
+#### Link to the containers used in this project.
 ##### Nginx
 ```
 https://hub.docker.com/_/nginx
@@ -85,67 +88,61 @@ https://hub.docker.com/_/php
 https://hub.docker.com/_/redis
 ```
 
-### O que são sistemas distribuídos:
-```
-Um sistema distribuído é uma coleção de programas de computador que utilizam recursos computacionais em vários pontos centrais de computação diferentes para atingir um objetivo comum e compartilhado. Também conhecido como computação distribuída ou bancos de dados distribuídos, ele depende de pontos centrais diferentes para se comunicar e sincronizar em uma rede comum. Esses pontos centrais costumam representar dispositivos de hardware físicos diferentes, mas também podem representar processos de software diferentes ou outros sistemas encapsulados recursivos. Os sistemas distribuídos visam remover gargalos ou pontos centrais de falha de um sistema.
-```
+### What are Distributed Systems:
 
-### Os sistemas de computação distribuída têm as seguintes características:
+A distributed system is a collection of computer programs that use computational resources across different central points of computing to achieve a common and shared goal. Also known as distributed computing or distributed databases, it relies on different central points to communicate and synchronize in a common network. These central points often represent different physical hardware devices but can also represent different software processes or other encapsulated recursive systems. Distributed systems aim to remove bottlenecks or single points of failure from a system.
 
+### Distributed Computing Systems have the following characteristics:
 
-- > Compartilhamento de recursos — um sistema distribuído pode compartilhar hardware, software ou dados
+- Resource Sharing - a distributed system can share hardware, software, or data.
+- Concurrent Processing - multiple machines can process the same function simultaneously.
+- Scalability - computing and processing capacity can evolve as needed when extended to additional machines.
+- Error Detection - faults can be more easily detected.
+- Transparency - a central point can access and communicate with other central points in the system.
 
-- > Processamento simultâneo — várias máquinas podem processar a mesma função ao mesmo tempo
+### Difference between a Centralized and Distributed System:
 
-- > Escalonamento — a capacidade de computação e processamento pode evoluir conforme necessário quando estendida para máquinas adicionais
+A centralized computing system is where all computing is done by a single computer at a single location. The main difference between centralized and distributed systems is the communication pattern among the central points of the system. The state of a centralized system is contained in a central point that clients access individually. All central points in a centralized system access the central point, which can lead to network congestion and slowness. A centralized system has a single point of failure, while a distributed system does not have a single point of failure.
 
-- > Detecção de erros — as falhas podem ser detectadas com mais facilidade
+### Docker:
 
-- > Transparência — um ponto central pode acessar os e se comunicar com outros pontos centrais no sistema
+Docker is software that provides virtual containers that package your application and its dependencies into a container. From this moment, the container becomes portable, and you can use it on other machines that have Docker installed, regardless of the operating system. (fault tolerance) This way, your application always works the same way everywhere. Docker isolates the application through a virtual container as if it were a host, each container works separately, and all dependencies are allocated separately in the corresponding container, making them completely isolated processes. For example, in our project, we have separate containers for the application and the database.
 
+### Explaining Each Technology Used:
 
+- #### NGINX:
+  - It is a web server, a program that runs and serves web requests. The software's architecture is asynchronous and event-driven, allowing it to process many requests at the same time. NGINX is also highly scalable, meaning that its service grows with increasing user traffic.
 
-### Diferença entre um sistema centralizado e um distribuído:
+- #### MySQL:
+  - MySQL is a database management system that uses the SQL language as its interface.
 
-> Um sistema de computação centralizado é onde toda a computação é executada por um único computador em um único local. A principal diferença entre sistemas centralizados e distribuídos é o padrão de comunicação entre os pontos centrais do sistema. O estado de um sistema centralizado está contido em um ponto central que os clientes acessam de maneira personalizada. Todos os pontos centrais de um sistema centralizado acessam o ponto central, o que pode levar ao congestionamento e lentidão da rede. Um sistema centralizado tem um único ponto de falha, enquanto um sistema distribuído não tem um único ponto de falha.
+- #### PHP:
+  - A programming language, used for developing server-side applications (backend).
 
-### Docker
-> O docker é um software que fornece containers virtuais que empacota sua aplicação e suas dependências para dentro de um container. A partir desse momento o container se torna portátil e você pode utilizá-lo em outras máquinas que possuem o docker instalado, independente do sistema operacional. (tolerância a falhas)
-Com isso a sua aplicação sempre funciona da mesma forma em qualquer lugar. O docker isola a aplicação através de um container virtual como se fosse um host, cada container funciona de forma separada e todas as dependências são alocadas de forma separada no container correspondente, assim se tornam processos totalmente isolados. 
-Como um exemplo, em nosso projeto possuímos containers para aplicação e banco de dados separadamente.
+- #### Redis:
+  - Redis is an in-memory data structure store, commonly used as a database, cache, and message broker. Redis allows data to be stored in memory, organized into keys and values.
 
-### Explicando cada tecnologia utilizada
-- #### NGINX 
-> É um servidor web, é um programa que roda e que serve para responder requisições web. A estrutura do software é assíncrona e orientada a eventos; possibilitando o processamento de muitas solicitações ao mesmo tempo. O NGINX também é altamente escalável, significando que seu serviço cresce com o aumento de tráfego do usuário.
+### Explaining Concepts Used in the Project:
 
-- #### mysql 
-> O MySQL é um sistema de gerenciamento de banco de dados, que utiliza a linguagem SQL como interface.
--  #### PHP
- > Linguagem de programação, mas utilizados ele pois ele é para o desenvolvimento de aplicações presentes e atuantes no lado do servidor, ou seja, o backend
+- #### Client:
+  - Allows users to interact with Docker and access containers via the command line or Remote API.
 
-- #### Redis
-> Redis é uma estrutura de armazenamento em memória, muito utilizado como banco de dados, cache e intermediário de mensagens.  o Redis permite o armazenamento em memória de dados organizados em chaves e valores.
+- #### Host:
+  - Provides a complete environment for running applications, consisting of the Daemon, images, containers, network, and volumes. The Daemon is responsible for all actions related to containers and receives commands through the Client.
 
-### Explicando conceitos utilizados no projeto
-- #### Client
- > Permite aos usuários interagir com o Docker e acessar os containers via linha de comando ou API Remota.
-- #### Host
-> Fornece um ambiente completo para executar aplicativos, sendo composto pelo Daemon, imagens, containers, rede e volumes. O Daemon é responsável por todas as ações relacionadas aos containers e recebe comandos por meio do Client.
+- #### Registry:
+  - These are services that provide locations where images will be stored and downloaded from. In other words, the Registry contains the Docker repositories that host the images, such as Docker Hub.
 
-- #### Registry 
-> São serviços que fornecem locais de onde irá armazenar e baixar as imagens. Em outras palavras, o Registry, contém os repositórios Docker que hospedam as imagens, como Docker Hub.
+- #### Virtualization:
+  - Docker provides container-based virtualization. This virtualization model operates at the operating system level. The key difference from a VM is that a Docker container shares the Kernel with the host's operating system. This increases performance and reduces memory consumption for the container.
 
+- #### Naming:
+  - Names play an important role in all computer systems. They are used to share resources and identify entities. To resolve names, a Naming System is required. In a distributed system, the implementation of the naming system is often distributed across several machines. When you are working with containers, you take entities (application, database, etc.) and place them inside the container. To ensure that the system's communication works and is understood, we use naming systems. This naming occurs in the docker-compose file.
 
-- #### Virtualização
-> O docker possui virtualização com base em contêiners. Esse modelo de virtualização está no nível de sistema operacional, A diferença para uma VM é que um container Docker compartilha o Kernel com o sistema operacional do host. Isso faz com que o desempenho aumente e o consumo de memória do contêiner diminua.
+### Project Structure and Docker Configuration:
 
-- #### nomeação
-> Nomes desempenham papel importante em todos os sistemas de computação  São usados, por exemplo, para compartilhar recursos e identificar entidades  Para resolver nomes é necessário implementar um Sistema de Nomes  Em um sistema distribuído, a implementação do sistema de nomes costuma ser distribuída por várias máquinas
-quando vc ta fazendo containers vc pega as entidades (aplicação, banco de dados,..) e coloca elas dentro do container. Para que a comunicação do sistema funcione e entenda, utilizamos o sistema de nomeação, essa nomeação ocorre no arquivo docker-compose.
-### Estrtura usada e configuração do docker
-
-> A ferramenta de versionamento de código escolhida foi  o Github por termos mais familiaridade com  o  sistema;
-O projeto foi desenvolvido para a matéria de Programação Web e foi reutilizada para esta disciplina, adicionando o funcionamento com SDs;
-O sistema é composto pelos containers de Php, Mysql, Redis e Nginx;
-Todos se comunicam pela mesma rede e possuem seus Dockerfiles, orquestrados por um docker-compose.yaml
-A estrutura de pastas do projeto foi projetada para atender aos requisitos do MVC, prática também escolhida por apresentar maior praticidade e facilidade.
+- The chosen code versioning tool is Github, as we are more familiar with the system.
+- The project was originally developed for the Web Programming course and was reused for this course, adding functionality for Distributed Systems.
+- The system is composed of containers for Php, Mysql, Redis, and Nginx.
+- They all communicate through the same network and have their Dockerfiles, orchestrated by a docker-compose.yaml.
+- The project's folder structure was designed to meet the requirements of the MVC pattern, which was also chosen for its practicality and ease of use.
