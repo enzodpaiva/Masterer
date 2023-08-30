@@ -1,4 +1,3 @@
-![GitHub repo size](https://img.shields.io/github/repo-size/enzodpaiva/Masterer)
 # Masterer 
 
 FACOM Project - This project was submitted as a assignment for two courses, and their members are:
